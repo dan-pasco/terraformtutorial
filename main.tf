@@ -22,8 +22,7 @@ resource "aws_instance" "my_instance" {
   ami           = "ami-0c635ee4f691a2310"
   instance_type = "t2.micro"
   security_groups = [aws_security_group.EC2_SG.name]
-  
-  
+  user_data = file ("script.sh")  
   tags = {
     Name = "MyExam"
 }
